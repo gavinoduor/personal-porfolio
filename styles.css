@@ -384,3 +384,46 @@ a {
   }
 }
 
+.cv-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+
+  /* 🔴 Red gradient */
+  background: linear-gradient(135deg, #ff0000, #ff4d4d);
+
+  /* Glow effect */
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine reflection */
+.cv-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.cv-btn:hover::before {
+  left: 120%;
+}
+
+.cv-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.8);
+  background: linear-gradient(135deg, #cc0000, #ff1a1a);
+}
